@@ -1,0 +1,50 @@
+//1-9九个数字组合成三个分数，要求前两个分数之和等于第三个分数。 
+#include<stdio.h>
+int main()
+{
+	int a,b,c,d,e,f,g,h,i;
+	float A,B,C;
+	for(a=1;a<=9;a++)
+		for(b=1;b<=6;b++)
+			{
+				if(b==a)
+					continue;
+				for(c=1;c<=9;c++)
+				{
+					if((c==a)||(c==b))
+						continue;
+					for(d=1;d<=9;d++)
+					{
+						if((d==a)||(d==b)||(d==c))
+							continue;
+						for(e=1;e<=9;e++)
+						{
+							if((e==d)||(e==c)||(e==b)||(e==a))
+								continue;
+							for(f=1;f<=9;f++)
+							{
+								if((f==a)||(f==b)||(f==c)||(f==d)||(f==e))
+									continue;
+								for(g=1;g<=9;g++)
+								{
+									if((g==a)||(g==b)||(g==c)||(g==d)||(g==e)||(g==f))
+										continue;
+									for(h=1;h<=9;h++)
+									{
+										if((h==a)||(h==b)||(h==c)||(h==d)||(h==e)||(h==f)||(h==g))
+											continue;
+										i=45-(a+b+c+d+e+f+g+h);
+										A=a/(10.0*b+c);
+										B=d/(10.0*e+f);
+										C=g/(10.0*h+i);
+										if(A+B==C)
+											printf("a=%d,b=%d,c=%d,d=%d,e=%d,f=%d,g=%d,h=%d,i=%d\n",a,b,c,d,e,f,g,h,i);
+									}
+								}	
+							} 
+						}
+					}		
+				}	
+			}
+			return 1;			
+} 
